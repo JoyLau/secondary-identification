@@ -1,10 +1,50 @@
+
 spring:
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
-    url: jdbc:oracle:thin:@192.168.10.240:1522:orcl12c
-    username: C##itmscz
-    password: itmscz
+    url: jdbc:oracle:thin:@192.168.10.195:1521:orcl
+    username: tglst
+    password: tglst
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+  kafka:
+    bootstrap-servers: 192.168.10.192:9092
+    template:
+      default-topic: index-vehicle
+    consumer:
+      group-id: secondary-identification
+api:
+  host: 192.168.10.246
+  port: 8086
+#  添加区域接口==>POST
+  addRepoURL: http://${api.host}:9876/api/biz/addrepo
+#  获取区域接口==>GET
+  getRepoURL: http://${api.host}:9876/api/biz/repos?all=true
+#  删除区域接口==>delete
+  delRepoURL: http://${api.host}:9876/api/biz/delrepo
+#  添加资源接口==>POST
+  addSourceURL: http://${api.host}:${api.port}/api/source
+#  获取资源 get
+  getSourceURL: http://${api.host}:${api.port}/api/source
+#  删除资源 POST
+  delSourceURL: http://${api.host}:${api.port}/api/source/del
+#  添加任务接口==>POST
+  addTaskURL: http://${api.host}:${api.port}/api/task
+#  获取任务 get
+  getTaskURL: http://${api.host}:${api.port}/api/task
+#  删除任务 POST
+  delTaskURL: http://${api.host}:${api.port}/api/task/del
+#  开启任务==>GET,后面加上taskid参数
+  startTaskURL: http://${api.host}:${api.port}/api/task/start
+#  开启任务==>GET,后面加上taskid参数
+  searchVehicleURL: http://${api.host}:9876/api/biz/searchvehicle
+image:
+  absolutePath: D:\passImage
+  path: http://192.168.10.195:8000
+  urls[0]: http://192.168.10.195:8000/cz/
+  urls[1]: http://192.168.10.195:8000/cz/kk/
+  urls[2]: http://192.168.10.195:8000/yn/kk/201710150000/
+server:
+  port: 8080

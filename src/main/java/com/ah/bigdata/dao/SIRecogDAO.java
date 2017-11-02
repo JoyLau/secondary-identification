@@ -1,6 +1,6 @@
 package com.ah.bigdata.dao;
 
-import com.ah.bigdata.model.SampRecog;
+import com.ah.bigdata.model.SIRecog;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -8,5 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * com.ah.bigdata.dao
  * 2587038142@qq.com
  */
-public interface SampRecogDAO extends JpaRepository<SampRecog,Integer> {
+public interface SIRecogDAO extends JpaRepository<SIRecog,Integer> {
 }

@@ -1,0 +1,22 @@
+{
+  "name": "任务1",
+  "typeId": 1,
+  "sourceId": 1,
+  "detectTypeIds": [
+    2011,
+    2013,
+    2012,
+    2015
+  ],
+  "speed": 50,
+  "baseTime": 0,
+  "relativePolygonRoi": [
+    {
+      "path": null
+    }
+  ],
+  "UserConfigMap": {
+    "DataOutput/Kafka/Addr": "192.168.10.192:9092",
+    "DataOutput/Kafka/Topic": "index-vehicle"
+  }
+}

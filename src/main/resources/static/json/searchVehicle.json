@@ -1,0 +1,32 @@
+{
+  "BaseQuery": {
+    "QueryTimeSpacialRanges": [
+      {
+        "RepoId": 1,
+        "TimeRanges": [
+          {
+            "TimestampStart": 1509465600000,
+            "TimestampEnd": 1509719807000
+          }
+        ],
+        "SensorIds": [
+          1,
+          2
+        ]
+      }
+    ],
+    "Offset": 0,
+    "Limit": 1000,
+    "QueryId": "searchvehicle_15f717ab301_229"
+  },
+  "TypeId": [],
+  "ColorId": [],
+  "PlateType": [],
+  "PlateColor": [],
+  "PlateText": [],
+  "HasSymbols": {},
+  "Side": [],
+  "HasIllegals": {},
+  "HasCoIllegals": {},
+  "SpecificVehicleTypes": []
+}
