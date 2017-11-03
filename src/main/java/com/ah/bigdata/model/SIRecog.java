@@ -13,7 +13,7 @@ import java.util.Date;
  * com.ah.bigdata.dao
  * 2587038142@qq.com
  */
-@Entity(name = "t_two_recog")
+@Entity(name = "t_two_recog_copy")
 @Data
 public class SIRecog {
     @Id

@@ -19,5 +19,7 @@ public class ImageConfig {
 
     private String absolutePath;
 
+    private String sharePath;
+
     private String path;
 }

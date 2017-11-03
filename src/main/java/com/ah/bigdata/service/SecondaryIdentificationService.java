@@ -3,6 +3,7 @@ package com.ah.bigdata.service;
 import com.ah.bigdata.config.ApiConfig;
 import com.ah.bigdata.config.ImageConfig;
 import com.ah.bigdata.dao.SIRecogDAO;
+import com.ah.bigdata.model.Result;
 import com.ah.bigdata.model.SIRecog;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -67,12 +68,8 @@ public class SecondaryIdentificationService {
      *
      * @return JSONObject
      */
-    public String addSource() {
-        JSONObject jsonObject = config.getJsonByFile(addSource);
-        jsonObject.put("name", "二次识别-" + System.currentTimeMillis());
-        jsonObject.put("sensorid", "7");
-        jsonObject.put("uri", "http://192.168.10.240:33/uploadFiles/recog/%E6%A1%82MDA829.jpg");
-        return restTemplate.postForObject(config.getAddSourceURL(), jsonObject, String.class);
+    public String addSource(JSONObject json) {
+        return restTemplate.postForObject(config.getAddSourceURL(), json, String.class);
     }
 
     /**
@@ -80,10 +77,7 @@ public class SecondaryIdentificationService {
      *
      * @return json
      */
-    public String addTask() {
-        JSONObject jsonObject = config.getJsonByFile(addTaskJson);
-        jsonObject.put("name", "二次识别-" + System.currentTimeMillis());
-        jsonObject.put("sourceId", 7);
+    public String addTask(JSONObject jsonObject) {
         return restTemplate.postForObject(config.getAddTaskURL(), jsonObject, String.class);
     }
 
@@ -93,7 +87,7 @@ public class SecondaryIdentificationService {
      * @return json
      */
     public String startTask(int taskId) {
-        return restTemplate.getForObject(config.getStartTaskURL() + "?taskid=" + 5, String.class);
+        return restTemplate.getForObject(config.getStartTaskURL() + "?taskid=" + taskId, String.class);
     }
 
     /**
@@ -101,19 +95,18 @@ public class SecondaryIdentificationService {
      *
      * @return String
      */
-    public String searchVehicle() {
-        JSONObject jsonObject = config.getJsonByFile(searchVehicle);
+    public String searchVehicle(JSONObject jsonObject) {
         return restTemplate.postForObject(config.getSearchVehicleURL(), jsonObject, String.class);
     }
 
     /**
-     * 查询机动车
+     * 保存机动车数据
      *
      * @return json
      */
-    public String saveVehicle() {
+    public String saveVehicle(JSONObject jsonObject) {
         String batch = "p-" + System.currentTimeMillis();
-        JSONArray arr = getVehicleData();
+        JSONArray arr = getVehicleData(jsonObject);
         for (Object o : arr) {
             JSONObject obj = JSONObject.parseObject(o.toString());
 
@@ -141,7 +134,7 @@ public class SecondaryIdentificationService {
 
             recogDAO.save(siRecog);
         }
-        return "";
+        return Result.success("data total:"+arr.size());
     }
 
     /**
@@ -149,8 +142,7 @@ public class SecondaryIdentificationService {
      *
      * @return JSONArray
      */
-    private JSONArray getVehicleData() {
-        JSONObject jsonObject = config.getJsonByFile(searchVehicle);
+    private JSONArray getVehicleData(JSONObject jsonObject) {
         String result = restTemplate.postForObject(config.getSearchVehicleURL(), jsonObject, String.class);
         JSONObject resultJSON = JSONObject.parseObject(result);
         return resultJSON.getJSONObject("Data").getJSONArray("RetVehicles");

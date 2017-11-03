@@ -1,16 +1,18 @@
 package com.ah.bigdata.controller;
 
+import com.ah.bigdata.model.Result;
 import com.ah.bigdata.service.SecondaryIdentificationService;
 import com.alibaba.fastjson.JSONObject;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by JoyLau on 2017/10/30.
  * com.ah.bigdata.controller
  * 2587038142@qq.com
  */
+@Api(description = "二次识别接口")
 @RestController
 @RequestMapping("si")
 public class SecondaryIdentificationController {
@@ -18,67 +20,91 @@ public class SecondaryIdentificationController {
     @Autowired
     private SecondaryIdentificationService service;
 
-    @RequestMapping("addSource")
-    public String addSource(){
-        return service.addSource();
+    @PostMapping("addSource")
+    public String addSource(@RequestBody String json){
+        JSONObject jsonObject;
+        try {
+            jsonObject = JSONObject.parseObject(json);
+        } catch (Exception e) {
+            return Result.error("illegal params");
+        }
+        return service.addSource(jsonObject);
     }
 
-    @RequestMapping("addTask")
-    public String addTask(){
-        return service.addTask();
+    @PostMapping("addTask")
+    public String addTask(@RequestBody String json){
+        JSONObject jsonObject;
+        try {
+            jsonObject = JSONObject.parseObject(json);
+        } catch (Exception e) {
+            return Result.error("illegal params");
+        }
+        return service.addTask(jsonObject);
     }
 
-    @RequestMapping("startTask")
-    public String startTask(){
-        return service.startTask(5);
+    @GetMapping("startTask/{taskId}")
+    public String startTask(@PathVariable(name = "taskId") int taskId){
+        return service.startTask(taskId);
     }
 
-    @RequestMapping("saveVehicle")
-    public String saveVehicle(){
-        return service.saveVehicle();
+    @PostMapping("saveVehicle")
+    public String saveVehicle(@RequestBody String json){
+        JSONObject jsonObject;
+        try {
+            jsonObject = JSONObject.parseObject(json);
+        } catch (Exception e) {
+            return Result.error("illegal params");
+        }
+        return service.saveVehicle(jsonObject);
     }
 
-    @RequestMapping("searchVehicle")
-    public String searchVehicle(){
-        return service.searchVehicle();
+    @PostMapping("searchVehicle")
+    public String searchVehicle(@RequestBody String json){
+        JSONObject jsonObject;
+        try {
+            jsonObject = JSONObject.parseObject(json);
+        } catch (Exception e) {
+            return Result.error("illegal params");
+        }
+        return service.searchVehicle(jsonObject);
     }
 
-    @RequestMapping("delAllSource")
+    @DeleteMapping("delAllSource")
     public String delAllSource(){
         return service.delAllSource();
     }
 
-    @RequestMapping("delAllRepo")
+    @DeleteMapping("delAllRepo")
     public String delAllRepo(){
         return service.delAllRepo();
     }
 
-    @RequestMapping("delAllTask")
+    @DeleteMapping("delAllTask")
     public String delAllTask(){
         return service.delAllTask();
     }
 
-    @RequestMapping("getAllFolderName")
+    @GetMapping("getAllFolderName")
     public JSONObject getAllFolderName(){
         return service.getAllFolderName();
     }
 
-    @RequestMapping("addAllSourceForYunNan")
+    @GetMapping("addAllSourceForYunNan")
     public JSONObject addAllSourceForYunNan(){
         return service.addAllSourceForYunNan();
     }
 
-    @RequestMapping("addAllRepoForYunNan")
+    @GetMapping("addAllRepoForYunNan")
     public JSONObject addAllRepoForYunNan(){
         return service.addAllRepoForYunNan();
     }
 
-    @RequestMapping("addAllTaskForYunNan")
+    @GetMapping("addAllTaskForYunNan")
     public JSONObject addAllTaskForYunNan(){
         return service.addAllTaskForYunNan();
     }
 
-    @RequestMapping("saveRecodeForYunNan")
+    @GetMapping("saveRecodeForYunNan")
     public JSONObject saveRecodeForYunNan(){
         return service.saveRecodeForYunNan();
     }
