@@ -18,6 +18,7 @@ spring:
 api:
   host: 192.168.10.246
   port: 8086
+  functions: [100,101,102,103,104,105,106,107,108]
 #  添加区域接口==>POST
   addRepoURL: http://${api.host}:9876/api/biz/addrepo
 #  获取区域接口==>GET
@@ -40,10 +41,16 @@ api:
   startTaskURL: http://${api.host}:${api.port}/api/task/start
 #  开启任务==>GET,后面加上taskid参数
   searchVehicleURL: http://${api.host}:9876/api/biz/searchvehicle
+#  单张图像任务处理==》post
+  singleImageURL: http://${api.host}:6505/rec/image
+#  多张图像任务处理，最多8张==》post
+  batchImageURL: http://${api.host}:6505/rec/image/batch
 image:
   absolutePath: D:\passImage
 #  共享目录，windows 下需要访问后记住用户名和密码
   sharePath: \\192.168.10.195\passImage
+  yunNanPath: \\192.168.10.195\passImage\yn\kk\201710150910
+  chuZhouPath: \\192.168.10.195\passImage\cz
   path: http://192.168.10.195:8000
   urls[0]: ${image.path}/cz
   urls[1]: ${image.path}/yn

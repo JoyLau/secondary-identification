@@ -130,7 +130,7 @@ public class SecondaryIdentificationService {
             siRecog.setRecog_veh_head_pos(getRVehHeadPos(obj));
 
             siRecog.setCreate_time(new Date());
-            siRecog.setExecute_time(new Date(obj.getJSONObject("Metadata").getLongValue("Timestamp")));
+            siRecog.setRec_time(new Date(obj.getJSONObject("Metadata").getLongValue("Timestamp")));
 
             recogDAO.save(siRecog);
         }
@@ -148,7 +148,7 @@ public class SecondaryIdentificationService {
         return resultJSON.getJSONObject("Data").getJSONArray("RetVehicles");
     }
 
-    private String getFolderIndexName(String url, int index) {
+    String getFolderIndexName(String url, int index) {
         String str = "";
         try {
             URI uri = new URI(url);
@@ -166,7 +166,7 @@ public class SecondaryIdentificationService {
      * @param url url
      * @return String
      */
-    private String getImageURI(String url) {
+    public String getImageURI(String url) {
         String uriStr = "";
         try {
             URI uri = new URI(url);
@@ -209,7 +209,7 @@ public class SecondaryIdentificationService {
      *
      * @return String
      */
-    private Date getPassDate(String url) {
+    public Date getPassDate(String url) {
         String fileName = getFolderIndexName(url, 4);
         String dateStr = getFileIndexName(fileName, 1);
         return strToDate(dateStr);
@@ -221,7 +221,7 @@ public class SecondaryIdentificationService {
      * @param url 文件url
      * @return 车牌编号
      */
-    private String getPlateNo(String url) {
+    public String getPlateNo(String url) {
         String fileName = getFolderIndexName(url, 4);
         String plateStr = getFileIndexName(fileName, 2);
         String plate = "";
@@ -239,7 +239,7 @@ public class SecondaryIdentificationService {
      * @param url url
      * @return String
      */
-    private String getPlateColor(String url) {
+    public String getPlateColor(String url) {
         String fileName = getFolderIndexName(url, 4);
         return getFileIndexName(fileName, 3).split("[.]")[0];
     }
@@ -497,7 +497,7 @@ public class SecondaryIdentificationService {
      * @param json json
      * @return String
      */
-    private String getCutboardInfo(JSONObject json) {
+    public String getCutboardInfo(JSONObject json) {
         int x = json.getIntValue("X");
         int y = json.getIntValue("Y");
         int width = json.getIntValue("Width");
@@ -663,47 +663,47 @@ public class SecondaryIdentificationService {
      *
      * @return json
      */
-    public JSONObject saveRecodeForYunNan() {
-        for (int i = 5; i < 498; i++) {
-            JSONObject jsonObject = config.getJsonByFile(searchVehicle);
-            JSONArray queryArr = jsonObject.getJSONObject("BaseQuery").getJSONArray("QueryTimeSpacialRanges");
-            JSONObject ob = JSONObject.parseObject(queryArr.get(0).toString());
-            ob.put("RepoId",i);
-            String result = restTemplate.postForObject(config.getSearchVehicleURL(), jsonObject, String.class);
-            JSONObject resultJSON = JSONObject.parseObject(result);
-            JSONArray retJSON = resultJSON.getJSONObject("Data").getJSONArray("RetVehicles");
-
-            String batch = "p-" + System.currentTimeMillis();
-            JSONArray arr = retJSON;
-            for (Object o : arr) {
-                JSONObject obj = JSONObject.parseObject(o.toString());
-
-                String imageUrl = obj.getJSONObject("Img").getString("URI");
-
-                SIRecog siRecog = new SIRecog();
-                siRecog.setSrc(getFolderIndexName(imageUrl, 1));
-                siRecog.setBatch(batch);
-                siRecog.setDevice_type(getFolderIndexName(imageUrl, 2));
-                siRecog.setImg_url(getImageURI(imageUrl));
-                siRecog.setPass_time(getPassDate(imageUrl));
-                siRecog.setPlate_nbr(getPlateNo(imageUrl));
-                siRecog.setPlate_color(getPlateColor(imageUrl));
-
-                siRecog.setRecog_plate_nbr(getRPlateNo(obj));
-                siRecog.setRecog_brand(getRBrand(obj));
-                siRecog.setRecog_veh_type(getRVenType(obj));
-                siRecog.setRecog_veh_color(getRVenColor(obj));
-                siRecog.setRecog_plate_color(getRPlateColor(obj));
-                executeSymbols(siRecog, obj);
-                siRecog.setRecog_veh_head_pos(getRVehHeadPos(obj));
-
-                siRecog.setCreate_time(new Date());
-                siRecog.setExecute_time(new Date(obj.getJSONObject("Metadata").getLongValue("Timestamp")));
-
-                recogDAO.save(siRecog);
-            }
-        }
-
-        return new JSONObject();
-    }
+//    public JSONObject saveRecodeForYunNan() {
+//        for (int i = 5; i < 498; i++) {
+//            JSONObject jsonObject = config.getJsonByFile(searchVehicle);
+//            JSONArray queryArr = jsonObject.getJSONObject("BaseQuery").getJSONArray("QueryTimeSpacialRanges");
+//            JSONObject ob = JSONObject.parseObject(queryArr.get(0).toString());
+//            ob.put("RepoId",i);
+//            String result = restTemplate.postForObject(config.getSearchVehicleURL(), jsonObject, String.class);
+//            JSONObject resultJSON = JSONObject.parseObject(result);
+//            JSONArray retJSON = resultJSON.getJSONObject("Data").getJSONArray("RetVehicles");
+//
+//            String batch = "p-" + System.currentTimeMillis();
+//            JSONArray arr = retJSON;
+//            for (Object o : arr) {
+//                JSONObject obj = JSONObject.parseObject(o.toString());
+//
+//                String imageUrl = obj.getJSONObject("Img").getString("URI");
+//
+//                SIRecog siRecog = new SIRecog();
+//                siRecog.setSrc(getFolderIndexName(imageUrl, 1));
+//                siRecog.setBatch(batch);
+//                siRecog.setDevice_type(getFolderIndexName(imageUrl, 2));
+//                siRecog.setImg_url(getImageURI(imageUrl));
+//                siRecog.setPass_time(getPassDate(imageUrl));
+//                siRecog.setPlate_nbr(getPlateNo(imageUrl));
+//                siRecog.setPlate_color(getPlateColor(imageUrl));
+//
+//                siRecog.setRecog_plate_nbr(getRPlateNo(obj));
+//                siRecog.setRecog_brand(getRBrand(obj));
+//                siRecog.setRecog_veh_type(getRVenType(obj));
+//                siRecog.setRecog_veh_color(getRVenColor(obj));
+//                siRecog.setRecog_plate_color(getRPlateColor(obj));
+//                executeSymbols(siRecog, obj);
+//                siRecog.setRecog_veh_head_pos(getRVehHeadPos(obj));
+//
+//                siRecog.setCreate_time(new Date());
+//                siRecog.setExecute_time(new Date(obj.getJSONObject("Metadata").getLongValue("Timestamp")));
+//
+//                recogDAO.save(siRecog);
+//            }
+//        }
+//
+//        return new JSONObject();
+//    }
 }

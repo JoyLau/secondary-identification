@@ -21,5 +21,9 @@ public class ImageConfig {
 
     private String sharePath;
 
+    private String yunNanPath;
+
+    private String chuZhouPath;
+
     private String path;
 }

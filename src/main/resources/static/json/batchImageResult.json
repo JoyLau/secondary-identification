@@ -1,0 +1,1120 @@
+{
+  "Context": {
+    "SessionId": "test123",
+    "Status": "200",
+    "Message": "SUCCESS",
+    "RequestTs": {
+      "Seconds": 1501759605,
+      "NanoSecs": 618673000
+    },
+    "ResponseTs": {
+      "Seconds": 1501759605,
+      "NanoSecs": 962182000
+    }
+  },
+  "Results": [
+    {
+      "Image": {
+        "Data": {
+          "Width": 1600,
+          "Height": 1232,
+          "URI": "http://192.168.2.21:3002/test_images/testimg/markerClassifier/singleCarMarkers/6.jpg"
+        },
+        "WitnessMetaData": {
+          "Timestamp": 0,
+          "Duration": 0,
+          "SensorId": 0,
+          "RepoId": 0,
+          "ObjType": 0
+        }
+      },
+      "Vehicles": [
+        {
+          "Id": 0,
+          "Img": {
+            "Cutboard": {
+              "X": 36,
+              "Y": 306,
+              "Width": 590,
+              "Height": 585,
+              "ResWidth": 0,
+              "ResHeight": 0,
+              "Confidence": 0.999908447265625
+            },
+            "Img": {
+              "Width": 0,
+              "Height": 0
+            },
+            "Rect": {
+              "CenterX": 0,
+              "CenterY": 0,
+              "Width": 0,
+              "Height": 0,
+              "Angle": 0
+            }
+          },
+          "Features": "fq4PPeyQjDuNzpw7xtpQPhv0IT74GJe9/HRFvXSh0j3TtK29f2gvQ+fGT6dicQ9yo2OvkDPB74=",
+          "ModelType": {
+            "StyleId": 1,
+            "Style": "轿车",
+            "StyleConfidence": 0.9999872446060181,
+            "BrandId": 38,
+            "Brand": "标致",
+            "BrandConfidence": 0.9999804496765137,
+            "SubBrandId": 42,
+            "SubBrand": "308",
+            "SubBrandConfidence": 0.9999804496765137,
+            "ModelYearId": 743,
+            "ModelYear": "2012_2014",
+            "ModelYearConfidence": 0.9999804496765137,
+            "PoseId": 2,
+            "Pose": "车头",
+            "PoseConfidence": 0.9999994039535522
+          },
+          "Color": {
+            "ColorId": 10,
+            "Confidence": 0.5676054358482361,
+            "ColorName": "银"
+          },
+          "Symbols": [
+            {
+              "SymbolId": 1,
+              "SymbolName": "年检标",
+              "Cutboard": {
+                "X": 120,
+                "Y": 133,
+                "Width": 17,
+                "Height": 12,
+                "ResWidth": 0,
+                "ResHeight": 0,
+                "Confidence": 0.9650909304618835
+              }
+            },
+            {
+              "SymbolId": 1,
+              "SymbolName": "年检标",
+              "Cutboard": {
+                "X": 192,
+                "Y": 114,
+                "Width": 23,
+                "Height": 15,
+                "ResWidth": 0,
+                "ResHeight": 0,
+                "Confidence": 0.9472981095314026
+              }
+            },
+            {
+              "SymbolId": 1,
+              "SymbolName": "年检标",
+              "Cutboard": {
+                "X": 140,
+                "Y": 118,
+                "Width": 22,
+                "Height": 16,
+                "ResWidth": 0,
+                "ResHeight": 0,
+                "Confidence": 0.9443523287773132
+              }
+            },
+            {
+              "SymbolId": 1,
+              "SymbolName": "年检标",
+              "Cutboard": {
+                "X": 167,
+                "Y": 116,
+                "Width": 20,
+                "Height": 14,
+                "ResWidth": 0,
+                "ResHeight": 0,
+                "Confidence": 0.8667239546775818
+              }
+            },
+            {
+              "SymbolId": 2,
+              "SymbolName": "摆件",
+              "Cutboard": {
+                "X": 223,
+                "Y": 221,
+                "Width": 26,
+                "Height": 28,
+                "ResWidth": 0,
+                "ResHeight": 0,
+                "Confidence": 0.9052001237869263
+              }
+            },
+            {
+              "SymbolId": 2,
+              "SymbolName": "摆件",
+              "Cutboard": {
+                "X": 182,
+                "Y": 223,
+                "Width": 24,
+                "Height": 22,
+                "ResWidth": 0,
+                "ResHeight": 0,
+                "Confidence": 0.759413480758667
+              }
+            }
+          ],
+          "Plates": [
+            {
+              "PlateText": "贵 JP7365",
+              "Color": {
+                "ColorId": 1,
+                "Confidence": 0,
+                "ColorName": "蓝色"
+              },
+              "StyleId": 1,
+              "StyleName": "普通蓝牌",
+              "Confidence": 0.9752073287963867,
+              "Cutboard": {
+                "X": 202,
+                "Y": 471,
+                "Width": 126,
+                "Height": 28,
+                "ResWidth": 0,
+                "ResHeight": 0,
+                "Confidence": 0.9752073287963867
+              },
+              "LocalProvinceConfidence": 0.9999983310699463
+            }
+          ],
+          "Passengers": [
+            {
+              "Id": -1,
+              "Face": {
+                "Id": 0,
+                "Confidence": 0,
+                "Img": {
+                  "Cutboard": {
+                    "X": 0,
+                    "Y": 0,
+                    "Width": 0,
+                    "Height": 0,
+                    "ResWidth": 0,
+                    "ResHeight": 0,
+                    "Confidence": 0
+                  },
+                  "Img": {
+                    "Width": 0,
+                    "Height": 0
+                  },
+                  "Rect": {
+                    "CenterX": 0,
+                    "CenterY": 0,
+                    "Width": 0,
+                    "Height": 0,
+                    "Angle": 0
+                  }
+                },
+                "AlignResult": {
+                  "Box": {
+                    "X": 0,
+                    "Y": 0,
+                    "Width": 0,
+                    "Height": 0
+                  }
+                }
+              },
+              "Driver": true,
+              "Img": {
+                "Cutboard": {
+                  "X": 0,
+                  "Y": 0,
+                  "Width": 0,
+                  "Height": 0,
+                  "ResWidth": 0,
+                  "ResHeight": 0,
+                  "Confidence": 0
+                },
+                "Img": {
+                  "Width": 0,
+                  "Height": 0
+                },
+                "Rect": {
+                  "CenterX": 0,
+                  "CenterY": 0,
+                  "Width": 0,
+                  "Height": 0,
+                  "Angle": 0
+                }
+              },
+              "PhoneFlag": 0,
+              "BeltFlag": 1,
+              "PhoneConfidence": 0.9997609853744507,
+              "BeltConfidence": 0.9996677041053772
+            },
+            {
+              "Id": -1,
+              "Face": {
+                "Id": 0,
+                "Confidence": 0,
+                "Img": {
+                  "Cutboard": {
+                    "X": 0,
+                    "Y": 0,
+                    "Width": 0,
+                    "Height": 0,
+                    "ResWidth": 0,
+                    "ResHeight": 0,
+                    "Confidence": 0
+                  },
+                  "Img": {
+                    "Width": 0,
+                    "Height": 0
+                  },
+                  "Rect": {
+                    "CenterX": 0,
+                    "CenterY": 0,
+                    "Width": 0,
+                    "Height": 0,
+                    "Angle": 0
+                  }
+                },
+                "AlignResult": {
+                  "Box": {
+                    "X": 0,
+                    "Y": 0,
+                    "Width": 0,
+                    "Height": 0
+                  }
+                }
+              },
+              "Driver": false,
+              "Img": {
+                "Cutboard": {
+                  "X": 0,
+                  "Y": 0,
+                  "Width": 0,
+                  "Height": 0,
+                  "ResWidth": 0,
+                  "ResHeight": 0,
+                  "Confidence": 0
+                },
+                "Img": {
+                  "Width": 0,
+                  "Height": 0
+                },
+                "Rect": {
+                  "CenterX": 0,
+                  "CenterY": 0,
+                  "Width": 0,
+                  "Height": 0,
+                  "Angle": 0
+                }
+              },
+              "PhoneFlag": -1,
+              "BeltFlag": 1,
+              "PhoneConfidence": 0,
+              "BeltConfidence": 0.9999925494194031
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Image": {
+        "Data": {
+          "Width": 1920,
+          "Height": 1080,
+          "URI": "http://192.168.2.21:3002/test_images/testimg/pedestrian/attribute/9.jpg"
+        },
+        "WitnessMetaData": {
+          "Timestamp": 0,
+          "Duration": 0,
+          "SensorId": 0,
+          "RepoId": 0,
+          "ObjType": 0
+        }
+      },
+      "Pedestrian": [
+        {
+          "Id": 0,
+          "Img": {
+            "Cutboard": {
+              "X": 745,
+              "Y": 475,
+              "Width": 178,
+              "Height": 389,
+              "ResWidth": 0,
+              "ResHeight": 0,
+              "Confidence": 0.9921987652778625
+            },
+            "Img": {
+              "Width": 0,
+              "Height": 0
+            },
+            "Rect": {
+              "CenterX": 0,
+              "CenterY": 0,
+              "Width": 0,
+              "Height": 0,
+              "Angle": 0
+            }
+          },
+          "Confidence": 0.9921987652778625,
+          "PedesAttr": {
+            "Sex": {
+              "Id": 2,
+              "Name": "男",
+              "Confidence": 0.9964532852172852
+            },
+            "Age": {
+              "Id": 3,
+              "Name": "30 到 50 岁",
+              "Confidence": 0.7788995504379272
+            },
+            "National": {
+              "Id": 0,
+              "Confidence": 0
+            },
+            "Category": [
+              {
+                "Id": 54,
+                "CategoryName": "上身颜色",
+                "Items": [
+                  {
+                    "Id": 1,
+                    "Name": "白色上身",
+                    "Confidence": 0.6457776427268982
+                  },
+                  {
+                    "Id": 9,
+                    "Name": "粉色上身",
+                    "Confidence": 0.6349647045135498
+                  }
+                ]
+              },
+              {
+                "Id": 56,
+                "CategoryName": "下身颜色",
+                "Items": [
+                  {
+                    "Id": 3,
+                    "Name": "黑色下身",
+                    "Confidence": 0.9998576641082764
+                  }
+                ]
+              },
+              {
+                "Id": 9,
+                "CategoryName": "上身纹理",
+                "Items": [
+                  {
+                    "Id": 3,
+                    "Name": "纯色上身",
+                    "Confidence": 0.9999691247940063
+                  }
+                ]
+              },
+              {
+                "Id": 10,
+                "CategoryName": "下身类别",
+                "Items": [
+                  {
+                    "Id": 1,
+                    "Name": "短裤",
+                    "Confidence": 0.7896046042442322
+                  }
+                ]
+              }
+            ]
+          },
+          "Face": {
+            "Id": 0,
+            "Confidence": 0,
+            "Img": {
+              "Cutboard": {
+                "X": 0,
+                "Y": 0,
+                "Width": 0,
+                "Height": 0,
+                "ResWidth": 0,
+                "ResHeight": 0,
+                "Confidence": 0
+              },
+              "Img": {
+                "Width": 0,
+                "Height": 0
+              },
+              "Rect": {
+                "CenterX": 0,
+                "CenterY": 0,
+                "Width": 0,
+                "Height": 0,
+                "Angle": 0
+              }
+            },
+            "AlignResult": {
+              "Box": {
+                "X": 0,
+                "Y": 0,
+                "Width": 0,
+                "Height": 0
+              }
+            }
+          }
+        },
+        {
+          "Id": 1,
+          "Img": {
+            "Cutboard": {
+              "X": 195,
+              "Y": 462,
+              "Width": 181,
+              "Height": 385,
+              "ResWidth": 0,
+              "ResHeight": 0,
+              "Confidence": 0.9786657691001892
+            },
+            "Img": {
+              "Width": 0,
+              "Height": 0
+            },
+            "Rect": {
+              "CenterX": 0,
+              "CenterY": 0,
+              "Width": 0,
+              "Height": 0,
+              "Angle": 0
+            }
+          },
+          "Confidence": 0.9786657691001892,
+          "PedesAttr": {
+            "Sex": {
+              "Id": 1,
+              "Name": "女",
+              "Confidence": 0.9973993897438049
+            },
+            "Age": {
+              "Id": 3,
+              "Name": "30 到 50 岁",
+              "Confidence": 0.5147669911384583
+            },
+            "National": {
+              "Id": 0,
+              "Confidence": 0
+            },
+            "Category": [
+              {
+                "Id": 2,
+                "CategoryName": "头部标志物",
+                "Items": [
+                  {
+                    "Id": 2,
+                    "Name": "帽子",
+                    "Confidence": 0.9836336970329285
+                  }
+                ]
+              },
+              {
+                "Id": 54,
+                "CategoryName": "上身颜色",
+                "Items": [
+                  {
+                    "Id": 9,
+                    "Name": "粉色上身",
+                    "Confidence": 0.6746334433555603
+                  }
+                ]
+              },
+              {
+                "Id": 56,
+                "CategoryName": "下身颜色",
+                "Items": [
+                  {
+                    "Id": 6,
+                    "Name": "红色下身",
+                    "Confidence": 0.9978916049003601
+                  }
+                ]
+              },
+              {
+                "Id": 9,
+                "CategoryName": "上身纹理",
+                "Items": [
+                  {
+                    "Id": 3,
+                    "Name": "纯色上身",
+                    "Confidence": 0.9891155362129211
+                  }
+                ]
+              },
+              {
+                "Id": 10,
+                "CategoryName": "下身类别",
+                "Items": [
+                  {
+                    "Id": 3,
+                    "Name": "长裤",
+                    "Confidence": 0.9999719858169556
+                  }
+                ]
+              }
+            ]
+          },
+          "Face": {
+            "Id": 0,
+            "Confidence": 0,
+            "Img": {
+              "Cutboard": {
+                "X": 0,
+                "Y": 0,
+                "Width": 0,
+                "Height": 0,
+                "ResWidth": 0,
+                "ResHeight": 0,
+                "Confidence": 0
+              },
+              "Img": {
+                "Width": 0,
+                "Height": 0
+              },
+              "Rect": {
+                "CenterX": 0,
+                "CenterY": 0,
+                "Width": 0,
+                "Height": 0,
+                "Angle": 0
+              }
+            },
+            "AlignResult": {
+              "Box": {
+                "X": 0,
+                "Y": 0,
+                "Width": 0,
+                "Height": 0
+              }
+            }
+          }
+        },
+        {
+          "Id": 2,
+          "Img": {
+            "Cutboard": {
+              "X": 598,
+              "Y": 616,
+              "Width": 236,
+              "Height": 441,
+              "ResWidth": 0,
+              "ResHeight": 0,
+              "Confidence": 0.9692032337188721
+            },
+            "Img": {
+              "Width": 0,
+              "Height": 0
+            },
+            "Rect": {
+              "CenterX": 0,
+              "CenterY": 0,
+              "Width": 0,
+              "Height": 0,
+              "Angle": 0
+            }
+          },
+          "Confidence": 0.9692032337188721,
+          "PedesAttr": {
+            "Sex": {
+              "Id": 2,
+              "Name": "男",
+              "Confidence": 0.99972003698349
+            },
+            "Age": {
+              "Id": 3,
+              "Name": "30到 50岁",
+              "Confidence": 0.7958198189735413
+            },
+            "National": {
+              "Id": 0,
+              "Confidence": 0
+            },
+            "Category": [
+              {
+                "Id": 54,
+                "CategoryName": "上身颜色",
+                "Items": [
+                  {
+                    "Id": 5,
+                    "Name": "蓝色上身",
+                    "Confidence": 0.9834681749343872
+                  }
+                ]
+              },
+              {
+                "Id": 56,
+                "CategoryName": "下身颜色",
+                "Items": [
+                  {
+                    "Id": 5,
+                    "Name": "蓝色下身",
+                    "Confidence": 0.6037912368774414
+                  }
+                ]
+              },
+              {
+                "Id": 9,
+                "CategoryName": "上身纹理",
+                "Items": [
+                  {
+                    "Id": 3,
+                    "Name": "纯色上身",
+                    "Confidence": 0.999432384967804
+                  }
+                ]
+              },
+              {
+                "Id": 10,
+                "CategoryName": "下身类别",
+                "Items": [
+                  {
+                    "Id": 3,
+                    "Name": "长裤",
+                    "Confidence": 0.9999970197677612
+                  }
+                ]
+              }
+            ]
+          },
+          "Face": {
+            "Id": 0,
+            "Confidence": 0,
+            "Img": {
+              "Cutboard": {
+                "X": 0,
+                "Y": 0,
+                "Width": 0,
+                "Height": 0,
+                "ResWidth": 0,
+                "ResHeight": 0,
+                "Confidence": 0
+              },
+              "Img": {
+                "Width": 0,
+                "Height": 0
+              },
+              "Rect": {
+                "CenterX": 0,
+                "CenterY": 0,
+                "Width": 0,
+                "Height": 0,
+                "Angle": 0
+              }
+            },
+            "AlignResult": {
+              "Box": {
+                "X": 0,
+                "Y": 0,
+                "Width": 0,
+                "Height": 0
+              }
+            }
+          }
+        },
+        {
+          "Id": 3,
+          "Img": {
+            "Cutboard": {
+              "X": 1102,
+              "Y": 181,
+              "Width": 82,
+              "Height": 179,
+              "ResWidth": 0,
+              "ResHeight": 0,
+              "Confidence": 0.9691752195358276
+            },
+            "Img": {
+              "Width": 0,
+              "Height": 0
+            },
+            "Rect": {
+              "CenterX": 0,
+              "CenterY": 0,
+              "Width": 0,
+              "Height": 0,
+              "Angle": 0
+            }
+          },
+          "Confidence": 0.9691752195358276,
+          "PedesAttr": {
+            "Sex": {
+              "Id": 1,
+              "Name": "女",
+              "Confidence": 0.9999743103981018
+            },
+            "Age": {
+              "Id": 2,
+              "Name": "15 到 30 岁",
+              "Confidence": 0.641557514667511
+            },
+            "National": {
+              "Id": 0,
+              "Confidence": 0
+            },
+            "Category": [
+              {
+                "Id": 52,
+                "CategoryName": "包",
+                "Items": [
+                  {
+                    "Id": 1,
+                    "Name": "双肩包",
+                    "Confidence": 0.6861483454704285
+                  },
+                  {
+                    "Id": 3,
+                    "Name": "拎物品",
+                    "Confidence": 0.8104049563407898
+                  }
+                ]
+              },
+              {
+                "Id": 54,
+                "CategoryName": "上身颜色",
+                "Items": [
+                  {
+                    "Id": 6,
+                    "Name": "红色上身",
+                    "Confidence": 0.5050109624862671
+                  }
+                ]
+              },
+              {
+                "Id": 56,
+                "CategoryName": "下身颜色",
+                "Items": [
+                  {
+                    "Id": 3,
+                    "Name": "黑色下身",
+                    "Confidence": 0.9999113082885742
+                  }
+                ]
+              },
+              {
+                "Id": 9,
+                "CategoryName": "上身纹理",
+                "Items": [
+                  {
+                    "Id": 3,
+                    "Name": "纯色上身",
+                    "Confidence": 0.9997507929801941
+                  }
+                ]
+              },
+              {
+                "Id": 10,
+                "CategoryName": "下身类别",
+                "Items": [
+                  {
+                    "Id": 3,
+                    "Name": "长裤",
+                    "Confidence": 0.9999986886978149
+                  }
+                ]
+              }
+            ]
+          },
+          "Face": {
+            "Id": 0,
+            "Confidence": 0,
+            "Img": {
+              "Cutboard": {
+                "X": 0,
+                "Y": 0,
+                "Width": 0,
+                "Height": 0,
+                "ResWidth": 0,
+                "ResHeight": 0,
+                "Confidence": 0
+              },
+              "Img": {
+                "Width": 0,
+                "Height": 0
+              },
+              "Rect": {
+                "CenterX": 0,
+                "CenterY": 0,
+                "Width": 0,
+                "Height": 0,
+                "Angle": 0
+              }
+            },
+            "AlignResult": {
+              "Box": {
+                "X": 0,
+                "Y": 0,
+                "Width": 0,
+                "Height": 0
+              }
+            }
+          }
+        },
+        {
+          "Id": 4,
+          "Img": {
+            "Cutboard": {
+              "X": 1253,
+              "Y": 104,
+              "Width": 65,
+              "Height": 165,
+              "ResWidth": 0,
+              "ResHeight": 0,
+              "Confidence": 0.9334916472434998
+            },
+            "Img": {
+              "Width": 0,
+              "Height": 0
+            },
+            "Rect": {
+              "CenterX": 0,
+              "CenterY": 0,
+              "Width": 0,
+              "Height": 0,
+              "Angle": 0
+            }
+          },
+          "Confidence": 0.9334916472434998,
+          "PedesAttr": {
+            "Sex": {
+              "Id": 2,
+              "Name": "男",
+              "Confidence": 0.9981482028961182
+            },
+            "Age": {
+              "Id": 3,
+              "Name": "30到 50岁",
+              "Confidence": 0.8769832849502563
+            },
+            "National": {
+              "Id": 0,
+              "Confidence": 0
+            },
+            "Category": [
+              {
+                "Id": 2,
+                "CategoryName": "头部标志物",
+                "Items": [
+                  {
+                    "Id": 1,
+                    "Name": "眼镜",
+                    "Confidence": 0.6737571358680725
+                  }
+                ]
+              },
+              {
+                "Id": 54,
+                "CategoryName": "上身颜色",
+                "Items": [
+                  {
+                    "Id": 1,
+                    "Name": "白色上身",
+                    "Confidence": 0.9999321699142456
+                  }
+                ]
+              },
+              {
+                "Id": 56,
+                "CategoryName": "下身颜色",
+                "Items": [
+                  {
+                    "Id": 3,
+                    "Name": "黑色下身",
+                    "Confidence": 0.5841705799102783
+                  }
+                ]
+              },
+              {
+                "Id": 9,
+                "CategoryName": "上身纹理",
+                "Items": [
+                  {
+                    "Id": 3,
+                    "Name": "纯色上身",
+                    "Confidence": 0.999995231628418
+                  }
+                ]
+              },
+              {
+                "Id": 10,
+                "CategoryName": "下身类别",
+                "Items": [
+                  {
+                    "Id": 1,
+                    "Name": "短裤",
+                    "Confidence": 0.9986416697502136
+                  }
+                ]
+              }
+            ]
+          },
+          "Face": {
+            "Id": 0,
+            "Confidence": 0,
+            "Img": {
+              "Cutboard": {
+                "X": 0,
+                "Y": 0,
+                "Width": 0,
+                "Height": 0,
+                "ResWidth": 0,
+                "ResHeight": 0,
+                "Confidence": 0
+              },
+              "Img": {
+                "Width": 0,
+                "Height": 0
+              },
+              "Rect": {
+                "CenterX": 0,
+                "CenterY": 0,
+                "Width": 0,
+                "Height": 0,
+                "Angle": 0
+              }
+            },
+            "AlignResult": {
+              "Box": {
+                "X": 0,
+                "Y": 0,
+                "Width": 0,
+                "Height": 0
+              }
+            }
+          }
+        },
+        {
+          "Id": 5,
+          "Img": {
+            "Cutboard": {
+              "X": 1341,
+              "Y": 105,
+              "Width": 59,
+              "Height": 127,
+              "ResWidth": 0,
+              "ResHeight": 0,
+              "Confidence": 0.7130444645881653
+            },
+            "Img": {
+              "Width": 0,
+              "Height": 0
+            },
+            "Rect": {
+              "CenterX": 0,
+              "CenterY": 0,
+              "Width": 0,
+              "Height": 0,
+              "Angle": 0
+            }
+          },
+          "Confidence": 0.7130444645881653,
+          "PedesAttr": {
+            "Sex": {
+              "Id": 1,
+              "Name": "女",
+              "Confidence": 0.9945268630981445
+            },
+            "Age": {
+              "Id": 3,
+              "Name": "30 到 50 岁",
+              "Confidence": 0.7163009643554688
+            },
+            "National": {
+              "Id": 0,
+              "Confidence": 0
+            },
+            "Category": [
+              {
+                "Id": 2,
+                "CategoryName": "头部标志物",
+                "Items": [
+                  {
+                    "Id": 2,
+                    "Name": "帽子",
+                    "Confidence": 0.6059149503707886
+                  }
+                ]
+              },
+              {
+                "Id": 54,
+                "CategoryName": "上身颜色",
+                "Items": [
+                  {
+                    "Id": 6,
+                    "Name": "红色上身",
+                    "Confidence": 0.9901665449142456
+                  }
+                ]
+              },
+              {
+                "Id": 56,
+                "CategoryName": "下身颜色",
+                "Items": [
+                  {
+                    "Id": 3,
+                    "Name": "黑色下身",
+                    "Confidence": 0.993553876876831
+                  }
+                ]
+              },
+              {
+                "Id": 9,
+                "CategoryName": "上身纹理",
+                "Items": [
+                  {
+                    "Id": 3,
+                    "Name": "纯色上身",
+                    "Confidence": 1
+                  }
+                ]
+              },
+              {
+                "Id": 10,
+                "CategoryName": "下身类别",
+                "Items": [
+                  {
+                    "Id": 3,
+                    "Name": "长裤",
+                    "Confidence": 0.9999877214431763
+                  }
+                ]
+              }
+            ]
+          },
+          "Face": {
+            "Id": 0,
+            "Confidence": 0,
+            "Img": {
+              "Cutboard": {
+                "X": 0,
+                "Y": 0,
+                "Width": 0,
+                "Height": 0,
+                "ResWidth": 0,
+                "ResHeight": 0,
+                "Confidence": 0
+              },
+              "Img": {
+                "Width": 0,
+                "Height": 0
+              },
+              "Rect": {
+                "CenterX": 0,
+                "CenterY": 0,
+                "Width": 0,
+                "Height": 0,
+                "Angle": 0
+              }
+            },
+            "AlignResult": {
+              "Box": {
+                "X": 0,
+                "Y": 0,
+                "Width": 0,
+                "Height": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 package com.ah.bigdata.config;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,6 +24,8 @@ public class ApiConfig {
 
     private int port;
 
+    private JSONArray functions;
+
     private String addSourceURL;
 
     private String addTaskURL;
@@ -44,6 +47,10 @@ public class ApiConfig {
     private String getRepoURL;
 
     private String delRepoURL;
+
+    private String singleImageURL;
+
+    private String batchImageURL;
 
     /**
      * 从json文件转化为json对象

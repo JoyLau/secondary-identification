@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
  * com.ah.bigdata.controller
  * 2587038142@qq.com
  */
-@Api(description = "二次识别接口")
+@Api(description = "二次识别接口(已弃用)")
 @RestController
 @RequestMapping("si")
 public class SecondaryIdentificationController {
@@ -104,9 +104,9 @@ public class SecondaryIdentificationController {
         return service.addAllTaskForYunNan();
     }
 
-    @GetMapping("saveRecodeForYunNan")
-    public JSONObject saveRecodeForYunNan(){
-        return service.saveRecodeForYunNan();
-    }
+//    @GetMapping("saveRecodeForYunNan")
+//    public JSONObject saveRecodeForYunNan(){
+//        return service.saveRecodeForYunNan();
+//    }
 
 }

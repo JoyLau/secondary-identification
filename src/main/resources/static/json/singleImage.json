@@ -1,0 +1,31 @@
+{
+  "Context": {
+    "SessionId": "test123",
+    "Type": 3,
+    "Functions": [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      300,
+      400
+    ]
+  },
+  "Images": [
+    {
+      "Data": {
+        "URI": "http://192.168.2.21:3002/test_images/testimg/markerClassifier/singleCarMarkers/6.jpg"
+      }
+    },
+    {
+      "Data": {
+        "URI": "http://192.168.2.21:3002/test_images/testimg/pedestrian/attribute/9.jpg"
+      }
+    }
+  ]
+}

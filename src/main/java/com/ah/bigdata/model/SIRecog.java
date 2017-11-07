@@ -13,7 +13,7 @@ import java.util.Date;
  * com.ah.bigdata.dao
  * 2587038142@qq.com
  */
-@Entity(name = "t_two_recog_copy")
+@Entity(name = "t_two_recog_w")
 @Data
 public class SIRecog {
     @Id
@@ -54,6 +54,6 @@ public class SIRecog {
     private int check_status = 1; //核对状态 1.未核对，2，正在核对，3、已经核对
     private Date update_time; //更新时间
     private Date create_time; //创建时间
-    private Date execute_time; //图片处理时间
+    private Date rec_time; //图片处理时间
 }
 
