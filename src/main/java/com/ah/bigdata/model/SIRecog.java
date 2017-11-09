@@ -55,5 +55,8 @@ public class SIRecog {
     private Date update_time; //更新时间
     private Date create_time; //创建时间
     private Date rec_time; //图片处理时间
+    private String session_id; //session_id
+    private double cost_time;//花费时间
+    private String message;//返回消息是否成功
 }
 

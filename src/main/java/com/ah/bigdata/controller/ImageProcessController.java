@@ -221,7 +221,7 @@ public class ImageProcessController {
             }
         }
         speed.setEnd_time(new Date());
-        long time = (speed.getEnd_time().getTime()-speed.getStart_time().getTime())/1000;
+        double time = (speed.getEnd_time().getTime()-speed.getStart_time().getTime())/1000.0;
         speed.setSpeed(speed.getImage_count()/time);
         siRecogSpeedDAO.save(speed);
         return Result.success("success");

@@ -197,7 +197,7 @@ public class SecondaryIdentificationService {
      */
     private Date strToDate(String timeStr) {
         try {
-            return new SimpleDateFormat("yyyyMMddhhmmss").parse(timeStr);
+            return new SimpleDateFormat("yyyyMMddHHmmss").parse(timeStr);
         } catch (ParseException e) {
             e.printStackTrace();
         }

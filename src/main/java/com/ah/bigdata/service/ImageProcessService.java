@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.File;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -66,20 +67,28 @@ public class ImageProcessService {
     public String batchImageAndSave(JSONObject json,String batch) {
         String jsonStr = processBatchImage(json);
         Date recDate = new Date();
-        JSONArray arr = JSONObject.parseObject(jsonStr).getJSONArray("Results");
+        JSONObject sourceJSON = JSONObject.parseObject(jsonStr);
+        JSONArray arr = sourceJSON.getJSONArray("Results");
+        List<SIRecog> list = new ArrayList<>();
         for (Object o : arr) {
             JSONObject obj = JSONObject.parseObject(o.toString());
-            saveImage(obj,batch,recDate);
+            list = saveImage(sourceJSON,obj,batch,recDate,list);
         }
+        recogDAO.save(list);
         return Result.success("success,date size:"+arr.size());
     }
 
 
     /**
      * 单张图片结果处理入库存储
-     * @param json json
+     * @param sourceJSON 返回的元JSON数据
+     * @param json 遍历结果的单个json数据
+     * @param batch 批次
+     * @param recDate 该批次开始存储的时间
+     * @param list 存放的集合
+     * @return 集合
      */
-    private void saveImage(JSONObject json,String batch,Date recDate){
+    private List<SIRecog> saveImage(JSONObject sourceJSON,JSONObject json,String batch,Date recDate,List<SIRecog> list){
         String imageUrl = json.getJSONObject("Image").getJSONObject("Data").getString("URI");
 
         SIRecog siRecog = new SIRecog();
@@ -102,13 +111,63 @@ public class ImageProcessService {
 
             siRecog.setCreate_time(new Date());
             siRecog.setRec_time(recDate);
+            siRecog.setSession_id(getSessionId(sourceJSON));
+            siRecog.setMessage(getMessage(sourceJSON));
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        recogDAO.save(siRecog);
+        list.add(siRecog);
+        return list;
     }
 
+    /**
+     * 获取返回的是否成功的消息
+     * @param json json
+     * @return String
+     */
+    private String getMessage(JSONObject json){
+        return getContext(json).getString("Message");
+    }
+
+    /**
+     * 获取一组数据所花费的时间
+     * @param json json
+     * @return time
+     */
+    private double getCostTime(JSONObject json) {
+        JSONObject requestTs = getContext(json).getJSONObject("RequestTs");
+        JSONObject responseTs = getContext(json).getJSONObject("ResponseTs");
+
+        long reqSeconds = requestTs.getLongValue("Seconds");
+        long reqNanoSecs = requestTs.getLongValue("NanoSecs");
+        long resSeconds = responseTs.getLongValue("Seconds");
+        long resNanoSecs = responseTs.getLongValue("NanoSecs");
+
+        DecimalFormat decimalFormat=new DecimalFormat(".00");
+
+        Double res = resSeconds + Double.valueOf(decimalFormat.format(resNanoSecs / 100000000.00));
+        Double req = reqSeconds + Double.valueOf(decimalFormat.format(reqNanoSecs/100000000.00));
+        return Double.valueOf(decimalFormat.format(res - req));
+    }
+
+    /**
+     * 返回sessionID
+     * @param json json
+     * @return json
+     */
+    private String getSessionId(JSONObject json){
+        return getContext(json).getString("SessionId");
+    }
+
+    /**
+     * 获取Context对象
+     * @param json json
+     * @return json
+     */
+    private JSONObject getContext(JSONObject json){
+        return json.getJSONObject("Context");
+    }
     /**
      * 获取车牌的信息
      *
@@ -333,5 +392,9 @@ public class ImageProcessService {
         }
 
         return lstUrls;
+    }
+
+    public static void main(String[] args){
+      System.out.println(1510049022.91386000-1510049021.653507000);
     }
 }

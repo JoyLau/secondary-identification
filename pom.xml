@@ -5,7 +5,7 @@
 
 	<groupId>com.ah.bigdata</groupId>
 	<artifactId>secondary-identification</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>v1.0</version>
 	<packaging>jar</packaging>
 
 	<name>secondary-identification</name>
@@ -115,6 +115,20 @@
 				<configuration>
 					<fork>true</fork>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>cn.joylau.code</groupId>
+				<artifactId>joylau-springboot-daemon-windows</artifactId>
+				<version>1.0.RELEASE</version>
+				<executions>
+					<execution>
+						<id>make-win-service</id>
+						<phase>package</phase>
+						<goals>
+							<goal>make-win-service</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

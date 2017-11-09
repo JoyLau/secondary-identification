@@ -7,7 +7,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: false
   kafka:
     bootstrap-servers: 192.168.10.192:9092
     consumer:
@@ -49,10 +49,12 @@ image:
   absolutePath: D:\passImage
 #  共享目录，windows 下需要访问后记住用户名和密码
   sharePath: \\192.168.10.195\passImage
-  yunNanPath: \\192.168.10.195\passImage\yn\kk\201710150910
+  yunNanPath: \\192.168.10.195\passImage\yn
   chuZhouPath: \\192.168.10.195\passImage\cz
   path: http://192.168.10.195:8000
   urls[0]: ${image.path}/cz
   urls[1]: ${image.path}/yn
 server:
-  port: 8080
+  port: 8093
+logging:
+  file: SecondaryIdentification.log

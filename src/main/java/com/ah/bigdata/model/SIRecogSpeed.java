@@ -23,6 +23,6 @@ public class SIRecogSpeed {
     private Date start_time;//开始时间
     private Date end_time;//结束时间
     private long image_count;//图片总数
-    private long speed;//处理速度
+    private double speed;//处理速度
 }
 
