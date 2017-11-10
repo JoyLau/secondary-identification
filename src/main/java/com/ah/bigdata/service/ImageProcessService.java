@@ -69,6 +69,9 @@ public class ImageProcessService {
         Date recDate = new Date();
         JSONObject sourceJSON = JSONObject.parseObject(jsonStr);
         JSONArray arr = sourceJSON.getJSONArray("Results");
+        if (arr.size() == 0) {
+            return Result.error("no results");
+        }
         List<SIRecog> list = new ArrayList<>();
         for (Object o : arr) {
             JSONObject obj = JSONObject.parseObject(o.toString());
